@@ -1,0 +1,71 @@
+<html>
+<head>
+   <title>PHP Project</title>
+
+
+</head>
+<body>
+   <form name="form" onsubmit="return check()" action="save.php"  method="post" enctype="multipart/form-data">
+     Student ID : <input type="text" name="sid"><br><br>
+     Student Name: <input type="text " name="sn"><br><br>
+     Student Age : <input type="text " name="sa"><br><br>
+     Gender :  <input type="radio" name="gender" value="female">Female
+               <input type="radio" name="gender" value="male">male
+               <br><br>
+     Country : <select name="country" id="country">
+              <option value="Bangladesh">Bangladesh</option>
+              <option value="Canada">Canada</option>
+              <option value="USA">USA</option>
+     </select>
+     <br><br>
+
+  Image :   <input type="file" name="image" id="picture"><br><br>
+  Video :   <input type="file" name="video" id="video"><br><br>
+     <input type="submit" name="submit" value="submit">
+   </form>
+
+   <script>
+     function check(){
+         var stuid   = document.form.sid.value;
+         var name    = document.form.sn.value;
+         var age     = document.form.sa.value;
+         var gender  = document.form.gender.value;
+         var image   = document.form.image.value;
+         var video   = document.form.video.value;
+
+         if(stuid==""){
+           alert("Id filled can not be empty");
+           return false;
+         }
+         if(name==""){
+           alert("Name filled can not be empty");
+           return false;
+         }
+
+         if(age==""){
+           alert("Age filled can not empty");
+           return false;
+         }
+         else if(age<18){
+           alert("Age Must be greater than 18  or equal 18");
+           return false;
+         }
+         if(gender==""){
+           alert("Gender filled can not be empty");
+           return false;
+         }
+         if(image==""){
+           alert("Image filled can not be empty");
+           return false;
+         }
+         if(video==""){
+           alert("Video filled can not be empty");
+           return false;
+         }
+
+     }
+   </script>
+
+
+</body>
+</html>
